@@ -25,7 +25,7 @@ export const getContent = async (
   res: Express.Response
 ) => {
   const origin = req.headers.origin;
-  console.log(req.cookies);
+  // console.log(req.cookies);
 
   const page = req.query.page;
   const contentType = req.query.contentType;

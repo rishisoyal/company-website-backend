@@ -22,11 +22,7 @@ export default async function supabaseMediaUpload(
     .from("media")
     .getPublicUrl(`media/${file.name}`); // path inside the bucket
 
-  if (error) {
-    console.error(error);
-    return error;
-  }
   // console.log(urlData.data);
 
-  return urlData.data.publicURL;
+  return urlData.data?.publicURL ?? null;
 }

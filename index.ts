@@ -4,8 +4,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import ContentRouter from "./routes/contentRoutes.ts";
 import UserRouter from "./routes/userRoutes.ts";
-import cookieParser from 'cookie-parser'
-import fileUpload from 'express-fileupload'
+import cookieParser from "cookie-parser";
+import fileUpload from "express-fileupload";
 
 config();
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -29,9 +29,14 @@ mongoose
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "http://192.168.42.1:3000"],
+    credentials: true,
+  })
+);
 app.use(cookieParser());
-app.use(fileUpload())
+app.use(fileUpload());
 app.use("/api/content", ContentRouter);
 app.use("/api/user", UserRouter);
 
@@ -41,5 +46,3 @@ app.listen(port, (err) => {
   }
   console.log(`App running at http://localhost:${port}`);
 });
-
-
