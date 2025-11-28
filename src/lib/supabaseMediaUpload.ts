@@ -24,5 +24,5 @@ export default async function supabaseMediaUpload(
 
   // console.log(urlData.data);
 
-  return urlData.data?.publicURL ?? null;
+  return urlData.data?.publicUrl ?? null;
 }
