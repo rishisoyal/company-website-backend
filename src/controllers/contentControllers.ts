@@ -1,9 +1,9 @@
 import Express from "express";
-import TextContent from "../models/TextContentModel.ts";
-import MediaContent from "../models/MediaContentModel.ts";
-import CardContent from "../models/CardContentModel.ts";
+import TextContent from "../models/TextContentModel";
+import MediaContent from "../models/MediaContentModel";
+import CardContent from "../models/CardContentModel";
 import mongoose from "mongoose";
-import supabaseMediaUpload from "../lib/supabaseMediaUpload.ts";
+import supabaseMediaUpload from "../lib/supabaseMediaUpload";
 
 const contentTypes = ["text", "media", "card"];
 const pages = [

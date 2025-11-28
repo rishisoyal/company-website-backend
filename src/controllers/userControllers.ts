@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import { SignJWT } from "jose";
 import Express from "express";
-import User from "../models/UserModel.ts";
+import User from "../models/UserModel";
 import dotenv from "dotenv";
 
 dotenv.config(); // load once

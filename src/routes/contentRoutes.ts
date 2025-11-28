@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getContent, postContent } from "../controllers/contentControllers.ts";
+import { getContent, postContent } from "../controllers/contentControllers";
 
 const ContentRouter = Router();
 

@@ -2,8 +2,8 @@ import express from "express";
 import { config } from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
-import ContentRouter from "./routes/contentRoutes.ts";
-import UserRouter from "./routes/userRoutes.ts";
+import ContentRouter from "./routes/contentRoutes";
+import UserRouter from "./routes/userRoutes";
 import cookieParser from "cookie-parser";
 import fileUpload from "express-fileupload";
 
