@@ -30,7 +30,7 @@ export async function userLogIn(req: Express.Request, res: Express.Response) {
     .cookie("auth_token", token, {
       httpOnly: true,
       secure: isProd,
-      sameSite: false,
+      sameSite: "none",
       path: "/",         // MUST MATCH logout
       maxAge: 2 * 24 * 60 * 60 * 1000, // 2 days
     })
@@ -41,7 +41,7 @@ export async function userLogIn(req: Express.Request, res: Express.Response) {
 export async function userLogOut(req: Express.Request, res: Express.Response) {
   const token = req.cookies.auth_token;
 	console.log(token);
-	
+
 
   if (!token) return res.status(401).json({ error: "Token not found" });
 
@@ -51,8 +51,8 @@ export async function userLogOut(req: Express.Request, res: Express.Response) {
     .cookie("auth_token", "", {
       httpOnly: true,
       secure: isProd,
-      sameSite: false,  
-      path: "/",        
+      sameSite: false,
+      path: "/",
       expires: new Date(0),
     })
     .status(200)
