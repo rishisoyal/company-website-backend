@@ -2,11 +2,15 @@
   "compilerOptions": {
     "target": "ES2020",
     "module": "CommonJS",
-    "lib": ["es2022", "dom"],
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "outDir": "dist",
     "rootDir": "src",
-    "strict": true
-  }
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "lib": ["es2022"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
