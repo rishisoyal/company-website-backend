@@ -42,7 +42,7 @@ export async function userLogIn(req: Express.Request, res: Express.Response) {
 
 export async function userLogOut(req: Express.Request, res: Express.Response) {
 	const token = req.cookies.auth_token;
-	//console.log(token);
+	// console.log(token);
 
 	if (!token) return res.status(401).json({ error: "Token not found" });
 
